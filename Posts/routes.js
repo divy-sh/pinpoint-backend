@@ -2,7 +2,8 @@ import * as dao from "./dao.js";
 import * as userDao from "../Users/dao.js"
 export default function PostRoutes(app) {
     const createPost = async (req, res) => {
-        delete req.body.user;
+        console.log(req.body)
+        // delete req.body.user;
         const post = await dao.createPost(req.body);
         res.json(post);
     };
